@@ -22,3 +22,11 @@ test("test de tryWord avec une lettre en plus au début", () => {
 test("test de tryWord avec aucune letre identique", () => {
 	expect(tryWord("bonjour", "lampe")).toStrictEqual({wellPlaced: [], missplaced: [], notInWord: ["b", "o", "n", "j", "o", "u", "r"]})
 })
+
+test("test de tryWord avec des stings vides", () => {
+	expect(tryWord("", "")).toBe(true)
+})
+
+test("test de tryWord avec une string vide", () => {
+	expect(tryWord("bonjour", "")).toStrictEqual({wellPlaced: [], missplaced: [], notInWord: ["b", "o", "n", "j", "o", "u", "r"]})
+})
